@@ -5,6 +5,8 @@
   <div class="content-box">
     <h3 class="inbox__title">Новые сообщения:(<span>{{unreadCount}}</span>)</h3>
     
+    <a href="{% url 'accounts:create-message' user.username %}" class="main-btn btn ps-3 pt-2 pb-2 pe-3 text-black ms-4"><b>New Message</b></a>
+
     <ul class="messages">
       {% for message in messageRequests %}
       {% if message.is_read == False %}

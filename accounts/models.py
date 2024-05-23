@@ -2,8 +2,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 import uuid
 from .managers import UserManager
-# from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib import messages
 # from django.http import HttpResponseRedirect
+# from django.utils.translation import gettext_lazy as _ 
+# from django.urls import reverse
+# from django.utils import timezone
 
 # def my_view(request):
 #     messages.success(request, "Сообщение успешно отправлено!")
@@ -57,6 +61,39 @@ class Follow(models.Model):
     def __str__(self):
         return f'{self.follower} is following {self.following}'
 
+# class Chat(models.Model): 
+#     DIALOG = 'D' 
+#     CHAT = 'C' 
+#     CHAT_TYPE_CHOICES = ( 
+#         (DIALOG, _('Dialog')), 
+#         (CHAT, _('Chat')) 
+#     ) 
+  
+#     type = models.CharField( 
+#         _('Тип'), 
+#         max_length=1, 
+#         choices=CHAT_TYPE_CHOICES, 
+#         default=DIALOG 
+#     ) 
+#     members = models.ManyToManyField('auth.User', verbose_name=_("Участник")) 
+  
+#     def get_absolute_url(self): 
+#         return reverse('users:messages', kwargs={'chat_id': self.pk})
+ 
+ 
+# class Message(models.Model):
+#     chat = models.ForeignKey(Chat, on_delete=models.CASCADE)
+#     author = models.ForeignKey(User, on_delete=models.CASCADE)
+#     message = models.TextField(_("Сообщение"))
+#     pub_date = models.DateTimeField(_('Дата сообщения'), default=timezone.now)
+#     is_readed = models.BooleanField(_('Прочитано'), default=False)
+ 
+#     class Meta:
+#         ordering=['pub_date']
+ 
+#     def __str__(self):
+#         return self.message
+    
 class Message(models.Model):
     sender = models.ForeignKey(
         Profile, on_delete=models.SET_NULL, null=True, blank=True)
@@ -70,7 +107,6 @@ class Message(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                         primary_key=True, editable=False)
- 
     def __str__(self):
         return self.subject
  

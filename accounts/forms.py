@@ -49,11 +49,19 @@ class EditProfileForm(ModelForm):
                 visible.field.widget.attrs['class'] = 'edit-profile-input form-control about-input'
             else:
                 visible.field.widget.attrs['class'] = 'edit-profile-input form-control rounded-pill'
-        
+                
+# class MessageForm(ModelForm):
+#     class Meta:
+#         model = Message
+#         fields = ['message']
+#         labels = {'message': ""}    
+
 class MessageForm(ModelForm):
+    # recipient_username = forms.CharField(max_length=150)
     class Meta:
         model = Message
-        fields = ['name', 'email', 'subject', 'body']
+        # fields = ['name', 'email', 'subject', 'body', 'recipient_username']
+        fields = ['subject', 'body']
  
     def __init__(self, *args, **kwargs):
         super(MessageForm, self).__init__(*args, **kwargs)
