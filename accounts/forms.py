@@ -5,14 +5,19 @@ from .models import Profile, Message
 
 
 class UserLoginForm(forms.Form):
+    # email = forms.EmailField(
+    #     widget=forms.EmailInput(
+    #         attrs={'class': 'form-control rounded-pill', 'placeholder': 'электронная почта'}
+    #     )
+    # )
     username = forms.CharField(
         widget=forms.TextInput(
-            attrs={'class': 'form-control rounded-pill', 'placeholder': 'username'}
+            attrs={'class': 'form-control rounded-pill', 'placeholder': 'никнейм'}
         )
     )
     password = forms.CharField(
         widget=forms.PasswordInput(
-            attrs={'class': 'form-control rounded-pill', 'placeholder': 'password'}
+            attrs={'class': 'form-control rounded-pill', 'placeholder': 'пароль'}
         )
     )
 
@@ -20,17 +25,17 @@ class UserLoginForm(forms.Form):
 class UserRegistrationForm(forms.Form):
     email = forms.EmailField(
         widget=forms.EmailInput(
-            attrs={'class': 'form-control rounded-pill', 'placeholder': 'email'}
+            attrs={'class': 'form-control rounded-pill', 'placeholder': 'электронная почта'}
         )
     )
     username = forms.CharField(
         widget=forms.TextInput(
-            attrs={'class': 'form-control rounded-pill', 'placeholder': 'username'}
+            attrs={'class': 'form-control rounded-pill', 'placeholder': 'никнейм'}
         )
     )
     password = forms.CharField(
         widget=forms.PasswordInput(
-            attrs={'class': 'form-control rounded-pill', 'placeholder': 'password'}
+            attrs={'class': 'form-control rounded-pill', 'placeholder': 'пароль'}
         )
     )
 
