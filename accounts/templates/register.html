@@ -9,23 +9,23 @@
 {% include 'first_header.html' %}
 <body class="login-bg" style="height: 100vh;">
     <div class="modal-content ps-5 pb-5 pe-5">
-        <h3 class="mt-4 mb-3"><b>Create account</b></h3>
+        <h3 class="mt-4 mb-3"><font face="Visby Round CF">Добро пожаловать в Shelly</font></h3>
         <div class="row">
             <form method="post">
                 {% csrf_token %}
-                <div class="">
-                    {{ form.email }}
+                <div class=""><font face="Visby Round CF">
+                    {{ form.email }}</font>
                 </div>
-                <div class="mt-2">
-                    {{ form.username }}
+                <div class="mt-2"><font face="Visby Round CF">
+                    {{ form.username }}</font>
                 </div>
-                <div class="mt-2">
-                    {{ form.password }}
+                <div class="mt-2"><font face="Visby Round CF">
+                    {{ form.password }}</font>
                 </div>
-                <input class="modal-red-btn btn text-white mt-3 w-100" type="submit" value="Submit">
+                <input class="modal-red-btn btn text-white mt-3 w-100" style="font-family: 'Visby Round CF';" type="submit" value="Зарегистрироваться">
             </form>
             <small class="text-muted mt-3">
-                Already have a account? <a class="text-decoration-none" href="{% url 'accounts:user_login' %}">Login Here</a>
+                <font face="Visby Round CF">Уже есть аккаунт? <a class="text-decoration-none" href="{% url 'accounts:user_login' %}">Войти здесь</font>
             </small>
         </div>
     </div>

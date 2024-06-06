@@ -41,6 +41,7 @@ def user_login(request):
             user = authenticate(
                 request, username=data['username'], password=data['password']
             )
+            print(user)
             if user is not None:
                 login(request, user)
                 return redirect('pinterest:home')
