@@ -157,7 +157,3 @@ header, .first-header {box-shadow: rgba(89, 89, 92, 0.041) 0px 7px 5px 0px;}
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-img {
-	border-radius: 50%;
-	height: 40px;
-  }
