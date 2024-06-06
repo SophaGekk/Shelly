@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="col-md-2"></div>
-<div class="col-md-8 pt-2 pb-2 row pin-detail-container">
+<div class="col-md-9 pt-2 pb-2 row pin-detail-container">
     <div class="col-md-6">
         {% if pin.get_type == 'video' %}
         <video autoplay muted controls class="pin-detail-img">
@@ -15,7 +15,7 @@
         <form action="{% url 'boards:save_to_board' pin.id %}" class="mb-3" method="post">
         <div class="row">
             {% csrf_token %}
-            <div class="dropdown col-md-6 mt-2">
+            <div class="dropdown col-md-5 mt-2">
                 <a href="#" class="d-block link-dark text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="gUZ pBj" height="20" width="20" viewBox="0 0 24 24" aria-label="More options" role="img">
                         <path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z" fill="#111111" stroke-width="0px"></path>
@@ -23,30 +23,30 @@
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                     {% if request.user == pin.user %}
-                    <li><a id="editPinBtn" class="dropdown-item" href="#">Edit pin</a></li>
+                    <li><a style="font-family: 'Visby Round CF';" id="editPinBtn" class="dropdown-item" href="#">Редактировать</a></li>
                     {% endif %}
-                    <li><a class="dropdown-item" href="{{ pin.file.url }}" download>Download image</a></li>
+                    <li><a style="font-family: 'Visby Round CF';" class="dropdown-item" href="{{ pin.file.url }}" download>Скачать</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">{{save_to_board_form.board}}</div>
+            <div class="col-md-4" style="font-family: 'Visby Round CF';">{{save_to_board_form.board}}</div>
             <div class="col-md-1">
-                <button type="submit" class="save-btn text-white"><b>Save</b></button>
+                <button type="submit" class="save-btn text-white"><font face="Visby Round CF"> Сохранить</font></button>
             </div>
         </div>
         </form>
-        <p><a class="text-black" href="http://{{pin.link}}">{{ pin.link }}</a></p>
-        <h1><b>{{pin.title}}</b></h1>
+        <p><a style="font-family: 'Visby Round CF';" class="text-black" href="http://{{pin.link}}">{{ pin.link }}</a></p>
+        <h1><font face="Visby Round CF">{{pin.title}}</font></h1>
         <div class="row">
             <div class="col-md-1">
-                <a href="{% url 'accounts:profile' pin.user.username %}">
+                <a style="font-family: 'Visby Round CF';" href="{% url 'accounts:profile' pin.user.username %}">
                     <img src="{{ pin.user.profile.photo.url }}" class="rounded-circle" width="50" height="50">
                 </a>
             </div>
             <div class="col-md-7 ms-1">
-                <a href="{% url 'accounts:profile' pin.user.username %}" class="text-decoration-none text-dark">
+                <a style="font-family: 'Visby Round CF';" href="{% url 'accounts:profile' pin.user.username %}" class="text-decoration-none text-dark">
                     <b class="ms-3">{{pin.user.username}}</b>
                 </a>
-                <p class="ms-3" style="font-size: 13px;">{{ pin.user.following.count }} followers</p>
+                <p class="ms-3" style="font-size: 13px; font-family: 'Visby Round CF'">{{ pin.user.following.count }} followers</p>
             </div>
             {% if pin.user != request.user %}
             <div class="col-md-1 mt-1">
@@ -58,25 +58,25 @@
             </div>
             {% endif %}
         </div>
-        <div class="mt-1">{{ pin.description }}</div>
+        <div style="font-family: 'Visby Round CF';" class="mt-1">{{ pin.description }}</div>
         <h5 class="mt-3">
-            <b>Comments</b>
+            <font face="Visby Round CF"> Комментарии</font>
             <a href="#" id="openComments">
                 <svg class="mb-1 ms-2 Hn_ gUZ pBj U9O kVc" height="18" width="18" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M6.72 24c.57 0 1.14-.22 1.57-.66L19.5 12 8.29.66c-.86-.88-2.27-.88-3.14 0-.87.88-.87 2.3 0 3.18L13.21 12l-8.06 8.16c-.87.88-.87 2.3 0 3.18.43.44 1 .66 1.57.66" fill="#111111" stroke-width="0px"></path></svg>
             </a>
         </h5>
         <form style="display: none;" action="{% url 'pins:add_comment' pin.id %}" id="commentsForm" method="post">
-            <p style="font-size: 12px;" >Share feedback, ask a question or give a high five</p>
+            <p style="font-size: 12px; font-family: 'Visby Round CF';">Поделитесь мнением, задайте вопрос или отправье кудосов :)</p>
             {% csrf_token %}
             <div class="row">
                 {% for comment in pin.comments.all %}
-                <div class="col-md-1 me-4 mt-3">
+                <div class="col-md-1 me-4 mt-3" style="font-family: 'Visby Round CF';">
                     <img src="{{ comment.user.profile.photo.url }}" class="rounded-circle" width="50" height="50">
                 </div>
-                <div class="col-md-10 mt-1 mb-2">
+                <div class="col-md-10 mt-1 mb-2" style="font-family: 'Visby Round CF';">
                     <div class="border p-2 comment-text-border">
                         <span><b>{{ comment.user.username }}</b></span><br>
-                        <span class="text-muted">
+                        <span class="text-muted" >
                             {{ comment.text }}
                         </span>
                     </div>
@@ -86,7 +86,7 @@
                                 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="gUZ B9u U9O kVc" height="16" width="16" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z" fill="#767676" stroke-width="0px"></path></svg>
                             </a>
                             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                                <li><a class="dropdown-item" href="{% url 'pins:delete_comment' comment.id %}">Delete</a></li>
+                                <li><a class="dropdown-item" href="{% url 'pins:delete_comment' comment.id %}">Удалить</a></li>
                             </ul>
                         </div>
                     </div>
@@ -97,13 +97,13 @@
                 <div class="col-md-1 me-4">
                     <img src="{{ request.user.profile.photo.url }}" class="rounded-circle" width="50" height="50">
                 </div>
-                <div class="col-md-10 mt-1">
+                <div class="col-md-10 mt-1" style="font-family: 'Visby Round CF';">
                     {% csrf_token %}
                     {{ comment_form.text }}
                 </div>
             </div>
         </form>
-        <div class="mt-5"><b>{{pin.user.username}}</b> saved to <b>{{pin.board.title}}</b></div>
+        <div style="font-family: 'Visby Round CF';" class="mt-5"><b>{{pin.user.username}}</b> сохранено в <b>{{pin.board.title}}</b></div>
     </div>
 </div>
 <!-- Edit pin modal -->
@@ -132,7 +132,7 @@
     </div>
 </div>
 <div class="col-md-2"></div>
-<h3 class="text-black text-center mt-3"><b>More like this</b></h3>
+<h3 class="text-black text-center mt-3"><font face="Visby Round CF"> Похожее </font></h3>
 <div class="row mt-4">
     {% for pin in related_pins %}
     <div class="img-container col-md-2 mb-3">
