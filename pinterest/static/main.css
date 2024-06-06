@@ -88,11 +88,11 @@ header, .first-header {box-shadow: rgba(89, 89, 92, 0.041) 0px 7px 5px 0px;}
 
 .btn {border-radius: 50px;}
 .following-btn {background-color: #0e0e0e;}
-.main-btn {background-color: #efefef;}
-.red-btn {background-color: #e60023;}
+.main-btn {background-color: #e4f5fb;}
+.red-btn {background-color: #50AADE;}
 
 .modal-red-btn {
-	background-color: #e60023;
+	background-color: #50AADE;
 	float: right;
 	font-weight: bold;
 }
@@ -100,7 +100,7 @@ header, .first-header {box-shadow: rgba(89, 89, 92, 0.041) 0px 7px 5px 0px;}
 .btn-select-border{border-bottom: 2px black solid;}
 
 .save-btn {
-	background-color: #e60023;
+	background-color: #50AADE;
 	border-radius: 0 30px 30px 0;
 	border: 0;
 	padding-top: 7px;
@@ -153,7 +153,7 @@ header, .first-header {box-shadow: rgba(89, 89, 92, 0.041) 0px 7px 5px 0px;}
 	float: left;
 }
 .login-bg {
-	background-image: url('../../media/background.jpg');
+	background: #C6E2F2;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
