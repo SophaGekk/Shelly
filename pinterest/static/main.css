@@ -8,12 +8,12 @@ div#masonry {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	height: 200vw;
+	height: 100vw;
 	width: 290px;
 	margin: 0;
 }
 
-div#masonry img, div#masonry video { 
+div#masonry imag, div#masonry video { 
 	width: 100%;
 	border-radius: 20px;
 	cursor: zoom-in;
@@ -156,4 +156,14 @@ header, .first-header {box-shadow: rgba(89, 89, 92, 0.041) 0px 7px 5px 0px;}
 	background: #C6E2F2;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+img {
+	border-radius: 50%;
+	height: 200px;
+  }
+
+imag {
+border-radius: 50%;
+height: 40px;
 }
