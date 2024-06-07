@@ -4,6 +4,7 @@ from django.http import Http404
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.urls import reverse
+from django.urls import reverse
 
 from boards.forms import CreateBoardForm
 from .forms import UserRegistrationForm, UserLoginForm, EditProfileForm
@@ -82,6 +83,7 @@ def unfollow(request, username):
 @login_required
 def profile(request, username):
     user = get_object_or_404(User, username=username)
+    print(user)
     print(user)
     boards = user.board_user.all()
     is_following = request.user.followers.filter(following=user).first()
@@ -183,19 +185,18 @@ def createMessage(request, username):
     if request.method == 'POST':
         form = MessageForm(request.POST)
         print(form.is_valid())
+        print(form.is_valid())
         if form.is_valid():
+
 
             message = form.save(commit=False)
             message.sender = sender
             message.recipient = recipient
-
             if sender:
                 message.name = sender.user.username
                 message.email = sender.user.email
             message.save()
-
             messages.success(request, 'Your message was successfully sent!')
             return redirect('accounts:profile', username=recipient.user.username)
-
     context = {'recipient': recipient, 'form': form}
     return render(request, 'message_form.html', context)   
