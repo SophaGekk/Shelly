@@ -13,7 +13,7 @@
                 <p class="mb-4" ><font face="Visby Round CF">Пользователи увидят текущую информацию</font></p>
                 <div class="row mt-1">
                     <div class="col-md-1 me-4">
-                        <label for="">Photo</label>
+                        <label for=""><font face="Visby Round CF">Фото</font></label>
                         <img 
                             style="object-fit: cover;" 
                             width="80"
@@ -22,32 +22,32 @@
                             src="{{ request.user.profile.photo.url }}" 
                         />
                     </div>
-                    <div class="col-md-5 mt-5 mb-4">
+                    <div class="col-md-6 mt-5 mb-4">
                         {{ form.photo }}
                     </div>
                     <div class="col-md-3 mt-5 mb-4"></div>
                     <div class="col-md-4 mt-3">
-                        <label class="mb-1" for="">First Name</label>
+                        <label class="mb-1" for=""><font face="Visby Round CF">Имя</font></label>
                         {{ form.fname }}
                     </div>
                     <div class="col-md-4 mt-3">
-                        <label class="mb-1" for="">Last Name</label>
+                        <label class="mb-1" for=""><font face="Visby Round CF">Фамилия</font></label>
                         {{ form.lname }}
                     </div>
                     <div class="col-md-8 mt-3">
-                        <label class="mb-1" for="">About</label>
+                        <label class="mb-1" for=""><font face="Visby Round CF">О себе</font></label>
                         {{ form.about }}
                     </div>
                     <div class="col-md-8 mt-3">
-                        <label class="mb-1" for="">Pronouns</label>
+                        <label class="mb-1" for=""><font face="Visby Round CF">Кликуха</font></label>
                         {{ form.pronouns }}
                     </div>
                     <div class="col-md-8 mt-3">
-                        <label class="mb-1" for="">Website</label>
+                        <label class="mb-1" for=""><font face="Visby Round CF">Ссылка на личный сайт</font></label>
                         {{ form.website }}
                     </div>
                     <div class="col-md-8 mt-3">
-                        <button type="submit" class="red-btn btn ps-4 pe-4 pt-3 pb-3 text-white"><b>Save</b></button>
+                        <button type="submit" class="red-btn btn ps-4 pe-4 pt-3 pb-3 text-white"><font face="Visby Round CF">Сохранить</font></button>
                     </div>
                 </div>
             </form>

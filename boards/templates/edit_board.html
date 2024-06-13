@@ -10,23 +10,23 @@
                     <img style="object-fit: cover;" class="rounded" src="{{ board.cover.url }}" width="180" height="180">
                 </div>
                 <div class="mt-5 col-md-8">
-                    <label for="">Set a cover for this board</label>
-                    <p>{{ form.cover }}</p>
+                    <label for=""><font face="Visby Round CF">Выберите низображение для обложки альбома</font></label>
+                    <p><font face="Visby Round CF">{{ form.cover }}</font></p>
                 </div>
             </div>
             <div class="mt-2">
-                <label for="">Board title</label>
-                <p>{{ form.title }}</p>
+                <label for=""><font face="Visby Round CF">Название</font></label>
+                <p><font face="Visby Round CF">{{ form.title }}</font></p>
             </div>
             <div class="">
-                <label class="ms-2">Make this board private</label>
-                {{ form.is_private }}
+                <label class="ms-2"><font face="Visby Round CF">Сделать альбом скрытым</font></label>
+                <font face="Visby Round CF">{{ form.is_private }}</font>
             </div>
             <div class="mt-3">
-                <label for="">Board description:</label>
-                <p>{{ form.description }}</p>
+                <label for=""><font face="Visby Round CF">Описание для альбома:</font></label>
+                <p><font face="Visby Round CF">{{ form.description }}</font></p>
             </div>
-            <button type="submit" class="red-btn btn ps-3 pe-3 text-white"><b>Save</b></button>
+            <button type="submit" class="red-btn btn ps-3 pe-3 text-white"><font face="Visby Round CF">Сохранить</font></button>
             </form>
     </div>
 
