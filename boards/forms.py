@@ -28,8 +28,8 @@ class EditBoardForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(EditBoardForm, self).__init__(*args, **kwargs)
-        self.fields['title'].widget.attrs['placeholder'] = 'Like "Places to Go" or "Recipes to Make"'
-        self.fields['description'].widget.attrs['placeholder'] = 'add description for this board'
+        self.fields['title'].widget.attrs['placeholder'] = 'Например: "Рецепты" или "Красивые места"'
+        self.fields['description'].widget.attrs['placeholder'] = 'Добавьте описание'
 
         for visible in self.visible_fields():
             if visible.name == 'title':

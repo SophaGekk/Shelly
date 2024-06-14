@@ -46,14 +46,14 @@
                 <a style="font-family: 'Visby Round CF';" href="{% url 'accounts:profile' pin.user.username %}" class="text-decoration-none text-dark">
                     <b class="ms-3">{{pin.user.username}}</b>
                 </a>
-                <p class="ms-3" style="font-size: 13px; font-family: 'Visby Round CF'">{{ pin.user.following.count }} followers</p>
+                <p class="ms-3" style="font-size: 13px; font-family: 'Visby Round CF'">{{ pin.user.following.count }} Подписчики</p>
             </div>
             {% if pin.user != request.user %}
             <div class="col-md-1 mt-1">
                 {% if is_following %}
-                <a href="{% url 'accounts:unfollow' pin.user.username %}" class="following-btn btn text-white"><b>Following</b></a>
+                <a href="{% url 'accounts:unfollow' pin.user.username %}" class="following-btn btn text-white"><font face="Visby Round CF">Подписки</font></a>
                 {% else %}
-                <a href="{% url 'accounts:follow' pin.user.username %}" class="main-btn btn text-black"><b>Follow</b></a>
+                <a href="{% url 'accounts:follow' pin.user.username %}" class="main-btn btn text-black"><font face="Visby Round CF">Подписаться</font></a>
                 {% endif %}
             </div>
             {% endif %}
@@ -103,7 +103,7 @@
                 </div>
             </div>
         </form>
-        <div style="font-family: 'Visby Round CF';" class="mt-5"><b>{{pin.user.username}}</b> сохранено в <b>{{pin.board.title}}</b></div>
+        <div style="font-family: 'Visby Round CF';" class="mt-5"><b>{{pin.user.username}}</b> сохранил в <b>{{pin.board.title}}</b></div>
     </div>
 </div>
 <!-- Edit pin modal -->
@@ -113,11 +113,11 @@
             <form action="{% url 'pins:edit_pin' pin.id %}" method="post">
                 {% csrf_token %}
                 {{ edit_form }}
-                <button style="float: right;" type="submit" class="mt-3 red-btn btn text-white"><b>Save</b></button>
+                <button style="float: right; font-family: 'Visby Round CF';" type="submit" class="mt-3 red-btn btn text-white"><b>Сохранить</b></button>
             </form>
             <div class="mt-3">
-                <a href="" style="float: right;" class="main-btn btn me-2 text-black"><b>Cancel</b></a>
-                <a href="{% url 'pins:delete_pin' pin.id %}" class="main-btn btn text-black"><b>Delete</b></a>
+                <a href="" style="float: right; font-family: 'Visby Round CF';" class="main-btn btn me-2 text-black"><b>Назад</b></a>
+                <a href="{% url 'pins:delete_pin' pin.id %}" style="font-family: 'Visby Round CF';" class="main-btn btn text-black"><b>Удалить</b></a>
             </div>
         </div>
         <div class="col-md-4">
