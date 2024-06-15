@@ -43,15 +43,16 @@
                 </a>
             </div>
             <div class="col-md-7 ms-1">
+                
                 <a style="font-family: 'Visby Round CF';" href="{% url 'accounts:profile' pin.user.username %}" class="text-decoration-none text-dark">
                     <b class="ms-3">{{pin.user.username}}</b>
                 </a>
-                <p class="ms-3" style="font-size: 13px; font-family: 'Visby Round CF'">{{ pin.user.following.count }} Подписчики</p>
+                <p class="ms-3" style="font-size: 13px; font-family: 'Visby Round CF'"> Подписчиков: {{ pin.user.following.count }} </p>
             </div>
             {% if pin.user != request.user %}
             <div class="col-md-1 mt-1">
                 {% if is_following %}
-                <a href="{% url 'accounts:unfollow' pin.user.username %}" class="following-btn btn text-white"><font face="Visby Round CF">Подписки</font></a>
+                <a href="{% url 'accounts:unfollow' pin.user.username %}" class="red-btn btn text-white"><font face="Visby Round CF">Отписаться</font></a>
                 {% else %}
                 <a href="{% url 'accounts:follow' pin.user.username %}" class="main-btn btn text-black"><font face="Visby Round CF">Подписаться</font></a>
                 {% endif %}

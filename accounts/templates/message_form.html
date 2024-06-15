@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="formPage my-xl">
-    <div class="content-box">
+<main class="login-bg" style="height: 100vh;">
+    <div class="modal-content ps-5 pb-5 pe-5">
         <div class="formWrapper">
             <a class="backButton" href="{% url 'accounts:profile' recipient.user.username  %}"><i class="im im-angle-left"></i></a>
             <br>
@@ -22,17 +22,17 @@
                 </div>
                 {% endif %}
 
-                <div class="form__field">
-                    <label for="formInput#text">{{ form.subject.label }}</label>
-                    {{ form.subject }}
+                <div class="col-md-12 mt-3">
+                    <font face="Visby Round CF">
+                    {{ form.subject }}</font>
                 </div>
 
-                <div class="form__field">
-                    <label for="formInput#text">{{ form.body.label }}</label>
-                    {{ form.body }}
+                <div class="col-md-12 mt-3">
+                    <font face="Visby Round CF">
+                    {{ form.body }}</font>
                 </div>
 
-                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Отправить" />
+                <input class="red-btn btn text-white mt-3" type="submit" value="Отправить" />
             </form>
         </div>
     </div>

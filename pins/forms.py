@@ -12,9 +12,9 @@ class CreatePinForm(ModelForm):
     def __init__(self, user, *args, **kwargs):
         super(CreatePinForm, self).__init__(*args, **kwargs)
         self.fields['board'].queryset = Board.objects.filter(user=user)
-        self.fields['title'].widget.attrs['placeholder'] = 'Add a Title'
-        self.fields['description'].widget.attrs['placeholder'] = 'Tell everyone what your pin is about..'
-        self.fields['link'].widget.attrs['placeholder'] = 'Add a destination link'
+        self.fields['title'].widget.attrs['placeholder'] = 'Добавьте описание'
+        self.fields['description'].widget.attrs['placeholder'] = 'Расскажите о чем ваш пост..'
+        self.fields['link'].widget.attrs['placeholder'] = 'Добавьте ссылку на источник'
         for visible in self.visible_fields():
             if visible.name == 'description':
                 visible.field.widget.attrs['class'] = 'description-input border form-control'
@@ -45,9 +45,9 @@ class EditPinForm(ModelForm):
     def __init__(self, user, *args, **kwargs):
         super(EditPinForm, self).__init__(*args, **kwargs)
         self.fields['board'].queryset = Board.objects.filter(user=user)
-        self.fields['title'].widget.attrs['placeholder'] = 'Add a Title'
-        self.fields['description'].widget.attrs['placeholder'] = 'Tell everyone what your pin is about..'
-        self.fields['link'].widget.attrs['placeholder'] = 'Add a destination link'
+        self.fields['title'].widget.attrs['placeholder'] = 'Добавьте описание'
+        self.fields['description'].widget.attrs['placeholder'] = 'Расскажите о чем ваш пост..'
+        self.fields['link'].widget.attrs['placeholder'] = 'Добавьте ссылку на источник'
         for visible in self.visible_fields():
             if visible.name == 'description':
                 visible.field.widget.attrs['class'] = 'description-input border form-control'
@@ -62,6 +62,6 @@ class CommentForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(CommentForm, self).__init__(*args, **kwargs)
-        self.fields['text'].widget.attrs['placeholder'] = 'Add comment'
+        self.fields['text'].widget.attrs['placeholder'] = 'Добавить комментарий'
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'form-control rounded-pill border'

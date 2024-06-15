@@ -11,7 +11,7 @@ class CreateBoardForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(CreateBoardForm, self).__init__(*args, **kwargs)
-        self.fields['title'].widget.attrs['placeholder'] = 'Like "Places to Go" or "Recipes to Make"'
+        self.fields['title'].widget.attrs['placeholder'] = 'Например: "Рецепты" или "Красивые места"'
         for visible in self.visible_fields():
             if visible.name == 'title':
                 visible.field.widget.attrs['class'] = 'form-control border rounded-pill p-2 mt-1'

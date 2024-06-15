@@ -62,7 +62,6 @@
   <header class="p-2 bg-white sticky-top">
     <div class="">
       <div class="d-flex flex-wrap align-items-center justify-content-between">
-        
         <!-- Логотип и навигация -->
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
           <img src="/static/favicon.png" alt="Favicon"  width="44">
@@ -82,8 +81,8 @@
           {% if messages %}
             {% for message in messages %}
             <div class="alert  alert--{{ message.tags }}">
-                <p class="alert__message">{{message}}</p>
-                <button class="alert__close"><font face="Visby Round CF"> Закрыть</font></button>
+                {% comment %} <p class="alert__message">{{message}}</p>
+                <button class="alert__close"><font face="Visby Round CF"> Закрыть</font></button> {% endcomment %}
             </div>
             {% endfor %}
             {% endif %}
