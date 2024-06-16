@@ -3,7 +3,7 @@
 <main class="inbox my-xl">
   <div class="content-box">
     <h3 class="inbox__title"><font face="Visby Round CF">Новые сообщения: (<span>{{unreadCount}}</span>)</font></h3>
-
+    {% comment %} <a href="{% url 'accounts:create-message' user.username %}" class="main-btn btn ps-3 pt-2 pb-2 pe-3 text-black ms-4"><b>New Message</b></a> {% endcomment %}
     <ul class="messages">
       {% for message in messageRequests %}
       {% if message.is_read == False %}

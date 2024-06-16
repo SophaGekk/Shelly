@@ -58,6 +58,14 @@ class MessageForm(ModelForm):
  
     def __init__(self, *args, **kwargs):
         super(MessageForm, self).__init__(*args, **kwargs)
- 
+
+        self.fields['subject'].widget.attrs['placeholder'] = 'Тема сообщения'
+        self.fields['body'].widget.attrs['placeholder'] = ''
+
         for name, field in self.fields.items():
             field.widget.attrs.update({'class': 'input'})
+        for visible in self.visible_fields():
+            if visible.name == 'subject':
+                visible.field.widget.attrs['class'] = 'form-control border rounded-pill p-2 mt-1'
+            else:
+                visible.field.widget.attrs['class'] = 'form-control border rounded-0 border-radius 40%;  p-2 mt-1'

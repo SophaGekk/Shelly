@@ -82,8 +82,8 @@
           {% if messages %}
             {% for message in messages %}
             <div class="alert  alert--{{ message.tags }}">
-                <p class="alert__message">{{message}}</p>
-                <button class="alert__close"><font face="Visby Round CF"> Закрыть</font></button>
+                {% comment %} <p class="alert__message">{{message}}</p>
+                <button class="alert__close"><font face="Visby Round CF"> Закрыть</font></button> {% endcomment %}
             </div>
             {% endfor %}
             {% endif %}
